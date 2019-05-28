@@ -632,6 +632,18 @@ public interface MySqlParserListener extends ParseTreeListener {
 	 */
 	void exitReferenceColumnConstraint(MySqlParser.ReferenceColumnConstraintContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code collateColumnConstraint}
+	 * labeled alternative in {@link MySqlParser#columnConstraint}.
+	 * @param ctx the parse tree
+	 */
+	void enterCollateColumnConstraint(MySqlParser.CollateColumnConstraintContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code collateColumnConstraint}
+	 * labeled alternative in {@link MySqlParser#columnConstraint}.
+	 * @param ctx the parse tree
+	 */
+	void exitCollateColumnConstraint(MySqlParser.CollateColumnConstraintContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code generatedColumnConstraint}
 	 * labeled alternative in {@link MySqlParser#columnConstraint}.
 	 * @param ctx the parse tree
@@ -1882,17 +1894,17 @@ public interface MySqlParserListener extends ParseTreeListener {
 	 */
 	void exitAlterByExchangePartition(MySqlParser.AlterByExchangePartitionContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code alterByAnalyzePartitiion}
+	 * Enter a parse tree produced by the {@code alterByAnalyzePartition}
 	 * labeled alternative in {@link MySqlParser#alterSpecification}.
 	 * @param ctx the parse tree
 	 */
-	void enterAlterByAnalyzePartitiion(MySqlParser.AlterByAnalyzePartitiionContext ctx);
+	void enterAlterByAnalyzePartition(MySqlParser.AlterByAnalyzePartitionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code alterByAnalyzePartitiion}
+	 * Exit a parse tree produced by the {@code alterByAnalyzePartition}
 	 * labeled alternative in {@link MySqlParser#alterSpecification}.
 	 * @param ctx the parse tree
 	 */
-	void exitAlterByAnalyzePartitiion(MySqlParser.AlterByAnalyzePartitiionContext ctx);
+	void exitAlterByAnalyzePartition(MySqlParser.AlterByAnalyzePartitionContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code alterByCheckPartition}
 	 * labeled alternative in {@link MySqlParser#alterSpecification}.
@@ -4864,6 +4876,30 @@ public interface MySqlParserListener extends ParseTreeListener {
 	 */
 	void exitStringDataType(MySqlParser.StringDataTypeContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code nationalStringDataType}
+	 * labeled alternative in {@link MySqlParser#dataType}.
+	 * @param ctx the parse tree
+	 */
+	void enterNationalStringDataType(MySqlParser.NationalStringDataTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code nationalStringDataType}
+	 * labeled alternative in {@link MySqlParser#dataType}.
+	 * @param ctx the parse tree
+	 */
+	void exitNationalStringDataType(MySqlParser.NationalStringDataTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code nationalVaryingStringDataType}
+	 * labeled alternative in {@link MySqlParser#dataType}.
+	 * @param ctx the parse tree
+	 */
+	void enterNationalVaryingStringDataType(MySqlParser.NationalVaryingStringDataTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code nationalVaryingStringDataType}
+	 * labeled alternative in {@link MySqlParser#dataType}.
+	 * @param ctx the parse tree
+	 */
+	void exitNationalVaryingStringDataType(MySqlParser.NationalVaryingStringDataTypeContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code dimensionDataType}
 	 * labeled alternative in {@link MySqlParser#dataType}.
 	 * @param ctx the parse tree
@@ -4911,6 +4947,16 @@ public interface MySqlParserListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSpatialDataType(MySqlParser.SpatialDataTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MySqlParser#collectionOptions}.
+	 * @param ctx the parse tree
+	 */
+	void enterCollectionOptions(MySqlParser.CollectionOptionsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MySqlParser#collectionOptions}.
+	 * @param ctx the parse tree
+	 */
+	void exitCollectionOptions(MySqlParser.CollectionOptionsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MySqlParser#convertedDataType}.
 	 * @param ctx the parse tree

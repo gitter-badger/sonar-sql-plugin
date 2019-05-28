@@ -381,6 +381,13 @@ public interface MySqlParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitReferenceColumnConstraint(MySqlParser.ReferenceColumnConstraintContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code collateColumnConstraint}
+	 * labeled alternative in {@link MySqlParser#columnConstraint}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCollateColumnConstraint(MySqlParser.CollateColumnConstraintContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code generatedColumnConstraint}
 	 * labeled alternative in {@link MySqlParser#columnConstraint}.
 	 * @param ctx the parse tree
@@ -1113,12 +1120,12 @@ public interface MySqlParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAlterByExchangePartition(MySqlParser.AlterByExchangePartitionContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code alterByAnalyzePartitiion}
+	 * Visit a parse tree produced by the {@code alterByAnalyzePartition}
 	 * labeled alternative in {@link MySqlParser#alterSpecification}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAlterByAnalyzePartitiion(MySqlParser.AlterByAnalyzePartitiionContext ctx);
+	T visitAlterByAnalyzePartition(MySqlParser.AlterByAnalyzePartitionContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code alterByCheckPartition}
 	 * labeled alternative in {@link MySqlParser#alterSpecification}.
@@ -2882,6 +2889,20 @@ public interface MySqlParserVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStringDataType(MySqlParser.StringDataTypeContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code nationalStringDataType}
+	 * labeled alternative in {@link MySqlParser#dataType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNationalStringDataType(MySqlParser.NationalStringDataTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code nationalVaryingStringDataType}
+	 * labeled alternative in {@link MySqlParser#dataType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNationalVaryingStringDataType(MySqlParser.NationalVaryingStringDataTypeContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code dimensionDataType}
 	 * labeled alternative in {@link MySqlParser#dataType}.
 	 * @param ctx the parse tree
@@ -2909,6 +2930,12 @@ public interface MySqlParserVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSpatialDataType(MySqlParser.SpatialDataTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MySqlParser#collectionOptions}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCollectionOptions(MySqlParser.CollectionOptionsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MySqlParser#convertedDataType}.
 	 * @param ctx the parse tree
