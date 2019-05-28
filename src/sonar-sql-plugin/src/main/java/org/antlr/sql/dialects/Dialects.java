@@ -7,7 +7,7 @@ import org.antlr.sql.models.AntlrContext;
 import org.sonar.plugins.sql.models.rules.SqlRules;
 
 public enum Dialects {
-	TSQL(new TSQLDialect()), PSSQL(new PsSqlDialect()), MYSQL(new MySqlDialect());
+	TSQL(new TSQLDialect()), PSSQL(new PsSqlDialect()), MYSQL(new MySqlDialect()), VSQL(new VSqlDialect());
 
 	public AntlrContext parse(String text) {
 		return parse(text, Collections.emptyList());
@@ -22,7 +22,7 @@ public enum Dialects {
 			}
 
 		});
-		
+
 		rules.forEach(r -> {
 			if (r.getDialect() == null || this.name().equalsIgnoreCase(r.getDialect())) {
 				ctx.rules.add(r);

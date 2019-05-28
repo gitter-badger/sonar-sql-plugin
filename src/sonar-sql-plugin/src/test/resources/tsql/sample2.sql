@@ -5,5 +5,5 @@ SELECT 1;
  */
 
 
-SELECT 2; -- inline comment
 
+SELECT * from dbo.test;  -- inline comment
